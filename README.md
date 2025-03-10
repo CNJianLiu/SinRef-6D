@@ -1,6 +1,6 @@
 # Novel Object 6D Pose Estimation with a Single Reference View
 
-This is the PyTorch implementation of paper **[SinRef-6D]()** developed by <a href="https://cnjliu.github.io/">J. Liu</a>, <a href="http://robotics.hnu.edu.cn/info/1071/1265.htm">W. Sun</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">K. Zeng</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">J. Zheng</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">H. Yang</a>, <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=SReb2csAAAAJ">L. Wang</a>, <a href="https://sites.google.com/view/rahmaniatlu">H. Rahmani</a>, and <a href="https://ajmalsaeed.net/">A. Mian</a>. SinRef-6D is a single reference view-based CAD model-free novel object 6D pose estimation method, which is **simple yet effective** and has **strong scalability for practical applications**.
+This is the PyTorch implementation of paper **[SinRef-6D](https://arxiv.org/abs/2503.05578)** developed by <a href="https://cnjliu.github.io/">J. Liu</a>, <a href="http://robotics.hnu.edu.cn/info/1071/1265.htm">W. Sun</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">K. Zeng</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">J. Zheng</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">H. Yang</a>, <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=SReb2csAAAAJ">L. Wang</a>, <a href="https://sites.google.com/view/rahmaniatlu">H. Rahmani</a>, and <a href="https://ajmalsaeed.net/">A. Mian</a>. SinRef-6D is a single reference view-based CAD model-free novel object 6D pose estimation method, which is **simple yet effective** and has **strong scalability for practical applications**.
 
 ![Fig1](image/image.jpg)
 
@@ -19,7 +19,7 @@ If you find our work useful, please consider citing:
 @article{SinRef-6D,
   author={Liu, Jian and Sun, Wei and Zeng, Kai and Zheng, Jin and Yang, Hui and Wang, Lin and Rahmani, Hossein and Mian, Ajmal},
   title={Novel Object 6D Pose Estimation with a Single Reference View},
-  journal={},
+  journal={arXiv preprint arXiv:2503.05578},
   year={2025}
 }
 ```
