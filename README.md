@@ -2,6 +2,13 @@
 
 This is the PyTorch implementation of paper **[SinRef-6D](https://arxiv.org/abs/2503.05578)** published in <b>*IEEE TRO*</b> by <a href="https://cnjliu.github.io/">J. Liu</a>, <a href="http://robotics.hnu.edu.cn/info/1071/1265.htm">W. Sun</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">K. Zeng</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">J. Zheng</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">H. Yang</a>, <a href="https://sites.google.com/view/rahmaniatlu">H. Rahmani</a>, <a href="https://ajmalsaeed.net/">A. Mian</a>, and <a href="https://github.com/CNJianLiu/SinRef-6D">L. Wang</a>. SinRef-6D is a single reference view-based CAD model-free novel object 6D pose estimation method, which is **simple yet effective** and has **strong scalability for practical applications**.
 
+Overview of the proposed task setup and robotic integration for unseen object 6-DoF absolute pose estimation tailored for practical robotic applications.
+
+![Fig1](image/teaser.jpg)
+
+## Framework Overview
+SinRef-6D task setup and framework for real-world robotic application: Given a normal RGB-D reference view of an unseen object, we aim to predict its **6-DoF absolute pose** from any query view.
+
 ![Fig1](image/Fig2.jpg)
 
 ## Real-World Demo
