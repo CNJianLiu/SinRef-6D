@@ -6,11 +6,6 @@ Overview of the proposed task setup and robotic integration for unseen object 6-
 
 ![Fig1](image/teaser.jpg)
 
-## Framework Overview
-SinRef-6D task setup and framework for real-world robotic application: Given a normal RGB-D reference view of an unseen object, we aim to predict its **6-DoF absolute pose** from any query view.
-
-![Fig1](image/Fig2.jpg)
-
 ## Real-World Demo
 SinRef-6D deployment in real-world robotic manipulation scenarios. Notably, the reference view is **not carefully selected**. We **randomly** select a normal view (free of occlusion, with minimal self-occlusion, and resembling a typical robotics manipulation view) using an Intel RealSense L515 RGB-D camera as the reference view.
 
