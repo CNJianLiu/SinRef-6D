@@ -18,7 +18,7 @@ SinRef-6D deployment in real-world robotic manipulation scenarios. Notably, the 
 
 To the best of our knowledge, we are the first to present a method for novel object 6D absolute pose estimation using only a single reference view in real-world robotic manipulation scenarios. This approach simultaneously eliminates the need for object *CAD models*, *dense reference views*, and *model retraining*, offering enhanced efficiency and scalability while demonstrating **strong generalization to potential real-world robotic applications**.
 
-The complete code will be released after paper acceptance.
+More demos can be seen at our **[Project Page](https://paperreview99.github.io/SinRef-6DoF-Robotic)**
 
 ## Citation
 If you find our work useful, please consider citing:
