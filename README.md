@@ -16,11 +16,11 @@ The complete code will be released after paper acceptance.
 ## Citation
 If you find our work useful, please consider citing:
 ```latex
-@article{SinRef-6D,
+@article{2026SinRef-6D,
   author={Liu, Jian and Sun, Wei and Zeng, Kai and Zheng, Jin and Yang, Hui and Rahmani, Hossein and Mian, Ajmal and Wang, Lin},
-  title={Novel Object 6D Pose Estimation with a Single Reference View},
-  journal={arXiv preprint arXiv:2503.05578},
-  year={2025}
+  title={Scalable Unseen Object 6-DoF Absolute Pose Estimation with Robotic Integration},
+  journal={IEEE Transactions on Robotics},
+  year={2026}
 }
 ```
 
