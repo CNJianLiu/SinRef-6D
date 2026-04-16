@@ -7,7 +7,7 @@ Given a **single RGB-D reference view** of an unseen object in a **default robot
 ![Fig1](image/teaser.jpg)
 
 ## Real-World Demo
-SinRef-6D deployment in real-world robotic manipulation scenarios. Notably, the reference view is **not carefully selected**. We **randomly** select a normal view (free of occlusion, with minimal self-occlusion, and resembling a typical robotics manipulation view) using an Intel RealSense L515 RGB-D camera as the reference view.
+SinRef-6D deployment in real-world robotic manipulation scenarios. Notably, the reference view is **not carefully selected**. We select a default robot manipulation viewpoint (free of occlusion and with minimal self-occlusion) using an Intel RealSense L515 RGB-D camera as the reference view.
 
 ![Fig2](image/demo.gif)
 
