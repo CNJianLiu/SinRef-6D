@@ -16,7 +16,7 @@ To the best of our knowledge, we are the first to present a method for novel obj
 More robotic demos can be seen at our **[Project Page](https://paperreview99.github.io/SinRef-6DoF-Robotic)**.
 
 ## Citation
-If you find our work useful, please consider citing:
+If you find our work helpful, please consider citing:
 ```latex
 @article{2026SinRef-6D,
   author={Liu, Jian and Sun, Wei and Zeng, Kai and Zheng, Jin and Yang, Hui and Rahmani, Hossein and Mian, Ajmal and Wang, Lin},
