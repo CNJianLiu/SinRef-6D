@@ -1,0 +1,39 @@
+name: sinref6d
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - setuptools
+  - wheel
+  - ninja
+  - packaging
+  - cmake
+  - numpy=1.24.*
+  - scipy=1.10.*
+  - pillow
+  - pyyaml
+  - imageio
+  - matplotlib
+  - scikit-image
+  - tqdm
+  - cudatoolkit=11.8
+  - pytorch=2.0.0
+  - torchvision=0.15.1
+  - pip:
+    - opencv-python==4.8.1.78
+    - pycocotools==2.0.7
+    - timm==0.4.12
+    - gorilla-core==0.2.7.8
+    - trimesh==3.22.1
+    - gpustat==1.0.0
+    - imgaug==0.4.0
+    - einops==0.7.0
+    - fvcore==0.1.5.post20221221
+    - tensorboardX==2.6.2.2
+    - KNN_CUDA
+    - causal-conv1d==1.4.0
+    - mamba-ssm==2.2.2

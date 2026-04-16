@@ -1,0 +1,11 @@
+build
+dist
+__pycache__
+*.egg-info/
+.vscode/
+*.pyd
+*.so
+*.octree
+*.points
+debug.log
+logs
