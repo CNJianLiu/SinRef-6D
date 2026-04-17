@@ -180,7 +180,7 @@ log/<model>_<config>_id<exp_id>/
 
 ## 7. BOP Evaluation
 
-Example:
+### Example:
 
 ```bash
 python Pose_Estimation_Model/test_bop.py \
@@ -207,7 +207,7 @@ python Pose_Estimation_Model/test_bop.py \
 
 Generated BOP csv files are saved under `log/...`.
 
-### 7.1 Fastest YCBV Reproduction
+### Fastest YCBV Reproduction
 
 If you only want to verify that the repository works end-to-end on YCB-V as quickly as possible, use this order:
 
