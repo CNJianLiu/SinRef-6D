@@ -19,9 +19,9 @@ More robotic demos can be seen at our **[Project Page](https://paperreview99.git
 
 This repository contains:
 
-- training code for the pose estimation model
+- Training code for the pose estimation model
 - BOP evaluation scripts
-- custom-object inference scripts
+- Custom-object inference scripts
 - CUDA/C++ extensions used by the model
 
 ## 1. Repository Structure
