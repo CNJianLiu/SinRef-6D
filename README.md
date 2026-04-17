@@ -24,7 +24,7 @@ This repository contains:
 - Custom-object inference scripts
 - CUDA/C++ extensions used by the model
 
-## 1. Repository Structure
+### Repository Structure
 
 ```text
 SinRef-6D
@@ -48,9 +48,7 @@ Main folders:
 - `Data/`: expected dataset layout and example inputs
 - `kernels/`, `dwconv/`: low-level CUDA extensions used by the VMamba and point processing code
 
-## 2. Method Overview
-
-The pose pipeline is:
+The model pipeline is:
 
 1. Crop an observed object instance from RGB-D input.
 2. Convert depth to an observed point cloud.
@@ -61,7 +59,7 @@ The pose pipeline is:
 
 The main model entry is `Pose_Estimation_Model/model/pose_estimation_model.py`.
 
-## 3. Environment Setup
+### Environment Setup
 
 The recommended environment is defined in `environment.yaml`.
 
@@ -73,14 +71,14 @@ This setup is intended for:
 - Python 3.10
 - PyTorch 2.0.0
 
-### 3.1 Create the conda environment
+#### Create the conda environment
 
 ```bash
 conda env create -f environment.yaml
 conda activate sinref6d
 ```
 
-### 3.2 Install CUDA extensions
+#### Install CUDA extensions
 
 After activating the environment, build the local extensions:
 
@@ -106,7 +104,7 @@ python setup.py install
 cd ../../../
 ```
 
-## 4. Data Preparation
+### Data Preparation
 
 The expected directory layout is:
 
@@ -141,7 +139,7 @@ By default, the config uses relative paths:
 
 If your datasets are stored outside the repo, the code will also try to resolve the same `Data/...` structure from a shared parent directory.
 
-## 5. Template Files
+### Template Files
 
 Expected template roots:
 
@@ -155,7 +153,7 @@ Expected template roots:
 
 The training and BOP loaders expect pre-rendered RGB, mask, depth or XYZ files together with pose metadata in the layout already used by this repository.
 
-## 6. Training
+### Training
 
 Use the base config:
 
@@ -178,9 +176,9 @@ Training outputs are written under:
 log/<model>_<config>_id<exp_id>/
 ```
 
-## 7. BOP Evaluation
+### BOP Evaluation
 
-### Example:
+#### Example:
 
 ```bash
 python Pose_Estimation_Model/test_bop.py \
@@ -207,7 +205,7 @@ python Pose_Estimation_Model/test_bop.py \
 
 Generated BOP csv files are saved under `log/...`.
 
-### Fastest YCBV Reproduction
+#### Fastest YCBV Reproduction
 
 If you only want to verify that the repository works end-to-end on YCB-V as quickly as possible, use this order:
 
@@ -259,7 +257,7 @@ If your detection jsons are stored somewhere else, pass:
 --detection_dir /path/to/detection_jsons
 ```
 
-## 8. Custom Object Inference
+### Custom Object Inference
 
 Prepare a custom template directory first:
 
@@ -292,7 +290,7 @@ Outputs will be written to:
 - `/path/to/custom_case/sam6d_results/detection_pem.json`
 - `/path/to/custom_case/sam6d_results/vis_pem.png`
 
-## 9. Evaluation Utilities
+### Evaluation Utilities
 
 Additional scripts are included for metric computation:
 
@@ -302,7 +300,7 @@ Additional scripts are included for metric computation:
 
 These are command-line tools now. Use `--help` on each script for arguments.
 
-## 10. Reproducibility Checklist
+### Reproducibility Checklist and Common Issues
 
 For a fast first reproduction, follow this exact order:
 
@@ -315,24 +313,22 @@ For a fast first reproduction, follow this exact order:
 7. Run `test_bop.py` on one dataset first, such as `ycbv`.
 8. Run training only after evaluation and data loading work correctly.
 
-## 11. Common Issues
-
-### Empty template list or `torch.stack` on an empty list
+#### Empty template list or `torch.stack` on an empty list
 
 This usually means the object model directory or pre-rendered template directory was not found. Check:
 
 - `Data/BOP/<dataset>/models`
 - `Data/BOP-Templates/<dataset>`
 
-### `knn_cuda` import failure
+#### `knn_cuda` import failure
 
 The code now has a PyTorch fallback. It can run without `knn_cuda`, but may be slower.
 
-### `imgaug` or `h5py` binary compatibility errors
+#### `imgaug` or `h5py` binary compatibility errors
 
 These usually come from incompatible NumPy versions. The provided environment pins NumPy to the 1.24 series to avoid that issue.
 
-### CUDA extension build issues
+#### CUDA extension build issues
 
 Make sure:
 
