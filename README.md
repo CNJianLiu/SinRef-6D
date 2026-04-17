@@ -24,7 +24,7 @@ This repository contains:
 - Custom-object inference scripts
 - CUDA/C++ extensions used by the model
 
-### Repository Structure
+### 1. Repository Structure
 
 ```text
 SinRef-6D
@@ -59,7 +59,7 @@ The model pipeline is:
 
 The main model entry is `Pose_Estimation_Model/model/pose_estimation_model.py`.
 
-### Environment Setup
+### 2. Environment Setup
 
 The recommended environment is defined in `environment.yaml`.
 
@@ -104,7 +104,7 @@ python setup.py install
 cd ../../../
 ```
 
-### Data Preparation
+### 3. Data Preparation
 
 The expected directory layout is:
 
@@ -139,7 +139,7 @@ By default, the config uses relative paths:
 
 If your datasets are stored outside the repo, the code will also try to resolve the same `Data/...` structure from a shared parent directory.
 
-### Template Files
+### 4. Template Files
 
 Expected template roots:
 
@@ -153,7 +153,7 @@ Expected template roots:
 
 The training and BOP loaders expect pre-rendered RGB, mask, depth or XYZ files together with pose metadata in the layout already used by this repository.
 
-### Training
+### 5. Training
 
 Use the base config:
 
@@ -176,7 +176,7 @@ Training outputs are written under:
 log/<model>_<config>_id<exp_id>/
 ```
 
-### BOP Evaluation
+### 6. BOP Evaluation
 
 #### Example:
 
@@ -257,7 +257,7 @@ If your detection jsons are stored somewhere else, pass:
 --detection_dir /path/to/detection_jsons
 ```
 
-### Custom Object Inference
+### 7. Custom Object Inference
 
 Prepare a custom template directory first:
 
@@ -290,7 +290,7 @@ Outputs will be written to:
 - `/path/to/custom_case/sam6d_results/detection_pem.json`
 - `/path/to/custom_case/sam6d_results/vis_pem.png`
 
-### Evaluation Utilities
+### 8. Evaluation Utilities
 
 Additional scripts are included for metric computation:
 
@@ -300,7 +300,7 @@ Additional scripts are included for metric computation:
 
 These are command-line tools now. Use `--help` on each script for arguments.
 
-### Reproducibility Checklist and Common Issues
+### 9. Reproducibility Checklist and Common Issues
 
 For a fast first reproduction, follow this exact order:
 
