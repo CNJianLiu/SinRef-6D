@@ -352,7 +352,7 @@ If you find our work helpful, please consider citing:
 ```
 
 ## Acknowledgements
-Our implementation leverages the code from the repository below:
+Our implementation leverages the code from the repository below. We thank all for releasing their code.
 - [MegaPose](https://github.com/megapose6d/megapose6d)
 - [GigaPose](https://github.com/nv-nguyen/gigaPose)
 - [GeoTransformer](https://github.com/qinzheng93/GeoTransformer)
