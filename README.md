@@ -15,9 +15,7 @@ To the best of our knowledge, we are the first to present a method for novel obj
 
 More robotic demos can be seen at our **[Project Page](https://paperreview99.github.io/SinRef-6DoF-Robotic)**.
 
-# SinRef-6D
-
-SinRef-6D is a template-based 6D object pose estimation project for RGB-D images. The current public model follows a VMamba + PointMamba pipeline: a VMamba image backbone extracts RGB-aligned features, PointMamba encodes point geometry, and dense point-level correspondences are used to recover the final rigid pose against rendered templates.
+## SinRef-6D Repository
 
 This repository contains:
 
