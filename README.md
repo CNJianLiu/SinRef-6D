@@ -64,9 +64,6 @@ The main model entry is `Pose_Estimation_Model/model/pose_estimation_model.py`.
 The recommended environment is defined in `environment.yaml`.
 
 This setup is intended for:
-
-- Linux
-- NVIDIA GPU
 - CUDA 11.8
 - Python 3.10
 - PyTorch 2.0.0
@@ -205,7 +202,7 @@ python Pose_Estimation_Model/test_bop.py \
 
 Generated BOP csv files are saved under `log/...`.
 
-#### Fastest YCBV Reproduction
+#### Fastest YCBV Reproduction:
 
 If you only want to verify that the repository works end-to-end on YCB-V as quickly as possible, use this order:
 
@@ -302,7 +299,7 @@ These are command-line tools now. Use `--help` on each script for arguments.
 
 ### 9. Reproducibility Checklist and Common Issues
 
-For a fast first reproduction, follow this exact order:
+#### - For a fast first reproduction, follow this exact order:
 
 1. Clone the repository.
 2. Create the conda environment from `environment.yaml`.
@@ -313,22 +310,22 @@ For a fast first reproduction, follow this exact order:
 7. Run `test_bop.py` on one dataset first, such as `ycbv`.
 8. Run training only after evaluation and data loading work correctly.
 
-#### Empty template list or `torch.stack` on an empty list
+#### - Empty template list or `torch.stack` on an empty list
 
 This usually means the object model directory or pre-rendered template directory was not found. Check:
 
 - `Data/BOP/<dataset>/models`
 - `Data/BOP-Templates/<dataset>`
 
-#### `knn_cuda` import failure
+#### - `knn_cuda` import failure
 
 The code now has a PyTorch fallback. It can run without `knn_cuda`, but may be slower.
 
-#### `imgaug` or `h5py` binary compatibility errors
+#### - `imgaug` or `h5py` binary compatibility errors
 
 These usually come from incompatible NumPy versions. The provided environment pins NumPy to the 1.24 series to avoid that issue.
 
-#### CUDA extension build issues
+#### - CUDA extension build issues
 
 Make sure:
 
