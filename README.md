@@ -351,6 +351,15 @@ If you find our work helpful, please consider citing:
 }
 ```
 
+## Acknowledgements
+Our implementation leverages the code from the repository below:
+- [MegaPose](https://github.com/megapose6d/megapose6d)
+- [GigaPose](https://github.com/nv-nguyen/gigaPose)
+- [GeoTransformer](https://github.com/qinzheng93/GeoTransformer)
+- [VMamba](https://github.com/MzeroMiko/VMamba?tab=readme-ov-file)
+- [SAM6D](https://github.com/JiehongLin/SAM-6D)
+- [PointMamba](https://github.com/LMD0311/PointMamba/tree/main)
+
 ## Licence
 
 This project is licensed under the terms of the MIT license.
