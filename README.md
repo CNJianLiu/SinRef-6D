@@ -16,18 +16,16 @@ To the best of our knowledge, we are the first to present a method for novel obj
 
 More robotic demos can be seen at our **[Project Page](https://paperreview99.github.io/SinRef-6DoF-Robotic)**.
 
-# SinRef-6D
-
-SinRef-6D is a template-based 6D object pose estimation project for RGB-D images. The current public model follows a VMamba + PointMamba pipeline: a VMamba image backbone extracts RGB-aligned features, PointMamba encodes point geometry, and dense point-level correspondences are used to recover the final rigid pose against rendered templates.
+## SinRef-6D Repository
 
 This repository contains:
 
-- training code for the pose estimation model
+- Training code for the pose estimation model
 - BOP evaluation scripts
-- custom-object inference scripts
+- Custom-object inference scripts
 - CUDA/C++ extensions used by the model
 
-## 1. Repository Structure
+### 1. Repository Structure
 
 ```text
 SinRef-6D
@@ -51,9 +49,7 @@ Main folders:
 - `Data/`: expected dataset layout and example inputs
 - `kernels/`, `dwconv/`: low-level CUDA extensions used by the VMamba and point processing code
 
-## 2. Method Overview
-
-The pose pipeline is:
+The model pipeline is:
 
 1. Crop an observed object instance from RGB-D input.
 2. Convert depth to an observed point cloud.
@@ -64,26 +60,23 @@ The pose pipeline is:
 
 The main model entry is `Pose_Estimation_Model/model/pose_estimation_model.py`.
 
-## 3. Environment Setup
+### 2. Environment Setup
 
 The recommended environment is defined in `environment.yaml`.
 
 This setup is intended for:
-
-- Linux
-- NVIDIA GPU
 - CUDA 11.8
 - Python 3.10
 - PyTorch 2.0.0
 
-### 3.1 Create the conda environment
+#### Create the conda environment
 
 ```bash
 conda env create -f environment.yaml
 conda activate sinref6d
 ```
 
-### 3.2 Install CUDA extensions
+#### Install CUDA extensions
 
 After activating the environment, build the local extensions:
 
@@ -109,7 +102,7 @@ python setup.py install
 cd ../../../
 ```
 
-## 4. Data Preparation
+### 3. Data Preparation
 
 **Download Datasets:**
 
@@ -153,7 +146,7 @@ By default, the config uses relative paths:
 
 If your datasets are stored outside the repo, the code will also try to resolve the same `Data/...` structure from a shared parent directory.
 
-## 5. Template Files
+### 4. Template Files
 
 **Download BOP-Templates Dataset:**
 
@@ -171,7 +164,7 @@ Expected template roots:
 
 The training and BOP loaders expect pre-rendered RGB, mask, depth or XYZ files together with pose metadata in the layout already used by this repository.
 
-## 6. Training
+### 5. Training
 
 Use the base config:
 
@@ -194,9 +187,9 @@ Training outputs are written under:
 log/<model>_<config>_id<exp_id>/
 ```
 
-## 7. BOP Evaluation
+### 6. BOP Evaluation
 
-Example:
+#### Example:
 
 ```bash
 python Pose_Estimation_Model/test_bop.py \
@@ -223,7 +216,7 @@ python Pose_Estimation_Model/test_bop.py \
 
 Generated BOP csv files are saved under `log/...`.
 
-### 7.1 Fastest YCBV Reproduction
+#### Fastest YCBV Reproduction:
 
 If you only want to verify that the repository works end-to-end on YCB-V as quickly as possible, use this order:
 
@@ -275,7 +268,7 @@ If your detection jsons are stored somewhere else, pass:
 --detection_dir /path/to/detection_jsons
 ```
 
-## 8. Custom Object Inference
+### 7. Custom Object Inference
 
 Prepare a custom template directory first:
 
@@ -308,7 +301,7 @@ Outputs will be written to:
 - `/path/to/custom_case/sam6d_results/detection_pem.json`
 - `/path/to/custom_case/sam6d_results/vis_pem.png`
 
-## 9. Evaluation Utilities
+### 8. Evaluation Utilities
 
 Additional scripts are included for metric computation:
 
@@ -318,9 +311,9 @@ Additional scripts are included for metric computation:
 
 These are command-line tools now. Use `--help` on each script for arguments.
 
-## 10. Reproducibility Checklist
+### 9. Reproducibility Checklist and Common Issues
 
-For a fast first reproduction, follow this exact order:
+#### - For a fast first reproduction, follow this exact order:
 
 1. Clone the repository.
 2. Create the conda environment from `environment.yaml`.
@@ -331,24 +324,22 @@ For a fast first reproduction, follow this exact order:
 7. Run `test_bop.py` on one dataset first, such as `ycbv`.
 8. Run training only after evaluation and data loading work correctly.
 
-## 11. Common Issues
-
-### Empty template list or `torch.stack` on an empty list
+#### - Empty template list or `torch.stack` on an empty list
 
 This usually means the object model directory or pre-rendered template directory was not found. Check:
 
 - `Data/BOP/<dataset>/models`
 - `Data/BOP-Templates/<dataset>`
 
-### `knn_cuda` import failure
+#### - `knn_cuda` import failure
 
 The code now has a PyTorch fallback. It can run without `knn_cuda`, but may be slower.
 
-### `imgaug` or `h5py` binary compatibility errors
+#### - `imgaug` or `h5py` binary compatibility errors
 
 These usually come from incompatible NumPy versions. The provided environment pins NumPy to the 1.24 series to avoid that issue.
 
-### CUDA extension build issues
+#### - CUDA extension build issues
 
 Make sure:
 
@@ -368,6 +359,15 @@ If you find our work helpful, please consider citing:
   year={2026}
 }
 ```
+
+## Acknowledgements
+Our implementation leverages the code from the repository below. We thank all for releasing their code.
+- [MegaPose](https://github.com/megapose6d/megapose6d)
+- [GigaPose](https://github.com/nv-nguyen/gigaPose)
+- [GeoTransformer](https://github.com/qinzheng93/GeoTransformer)
+- [VMamba](https://github.com/MzeroMiko/VMamba?tab=readme-ov-file)
+- [SAM6D](https://github.com/JiehongLin/SAM-6D)
+- [PointMamba](https://github.com/LMD0311/PointMamba/tree/main)
 
 ## Licence
 
