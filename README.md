@@ -1,12 +1,13 @@
 # Scalable Unseen Objects 6-DoF Absolute Pose Estimation with Robotic Integration
 
-This is the PyTorch implementation of paper **[SinRef-6D](https://paperreview99.github.io/SinRef-6DoF-Robotic)** published in <b>*IEEE TRO*</b> by <a href="https://cnjliu.github.io/">J. Liu</a>, <a href="http://robotics.hnu.edu.cn/info/1071/1265.htm">W. Sun</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">K. Zeng</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">J. Zheng</a>, <a href="https://github.com/CNJianLiu/SinRef-6D">H. Yang</a>, <a href="https://sites.google.com/view/rahmaniatlu">H. Rahmani</a>, <a href="https://ajmalsaeed.net/">A. Mian</a>, and <a href="https://github.com/CNJianLiu/SinRef-6D">L. Wang</a>. SinRef-6D is a single reference view-based CAD model-free novel object 6D pose estimation method, which is **simple yet effective** and has **strong scalability for practical applications**.
+This is the PyTorch implementation of paper **[SinRef-6D](https://paperreview99.github.io/SinRef-6DoF-Robotic)** published in `<b>`*IEEE TRO*`</b>` by `<a href="https://cnjliu.github.io/">`J. Liu`</a>`, `<a href="http://robotics.hnu.edu.cn/info/1071/1265.htm">`W. Sun`</a>`, `<a href="https://github.com/CNJianLiu/SinRef-6D">`K. Zeng`</a>`, `<a href="https://github.com/CNJianLiu/SinRef-6D">`J. Zheng`</a>`, `<a href="https://github.com/CNJianLiu/SinRef-6D">`H. Yang`</a>`, `<a href="https://sites.google.com/view/rahmaniatlu">`H. Rahmani`</a>`, `<a href="https://ajmalsaeed.net/">`A. Mian`</a>`, and `<a href="https://github.com/CNJianLiu/SinRef-6D">`L. Wang`</a>`. SinRef-6D is a single reference view-based CAD model-free novel object 6D pose estimation method, which is **simple yet effective** and has **strong scalability for practical applications**.
 
 Given a **single RGB-D reference view** of an unseen object in a **default robot manipulation viewpoint**, we aim to predict its 6-DoF absolute pose from **any query view**.
 
 ![Fig1](image/teaser.jpg)
 
 ## Real-World Demo
+
 SinRef-6D deployment in real-world robotic manipulation scenarios. Notably, the reference view is **not carefully selected**. We select a default robot manipulation viewpoint (free of occlusion and with minimal self-occlusion) using an Intel RealSense L515 RGB-D camera as the reference view.
 
 ![Fig2](image/demo.gif)
@@ -110,6 +111,15 @@ cd ../../../
 
 ## 4. Data Preparation
 
+**Download Datasets:**
+
+- **Training Datasets (MegaPose-GSO & MegaPose-ShapeNetCore):** Available at [BOP Challenge 2023 Training Datasets](https://github.com/thodan/bop_toolkit/blob/master/docs/bop_challenge_2023_training_datasets.md)
+  - MegaPose-GSO: Objects from Google Scanned Objects
+  - MegaPose-ShapeNetCore: Objects from ShapeNetCore
+
+- **BOP Test Datasets:** Available at [BOP Benchmark Datasets](https://bop.felk.cvut.cz/datasets/)
+  - Includes: YCB-V, LM-O, T-LESS, ITODD, HB, IC-BIN, TUD-L, etc.
+
 The expected directory layout is:
 
 ```text
@@ -145,15 +155,19 @@ If your datasets are stored outside the repo, the code will also try to resolve 
 
 ## 5. Template Files
 
+**Download BOP-Templates Dataset:**
+
+You can download the pre-rendered BOP-Templates dataset from [Google Drive](https://drive.google.com/drive/folders/14RRCs4ChlCCFlIjlUrriSTGPoHzniCwt?usp=drive_link).
+
 Expected template roots:
 
 - training templates:
+
   - `Data/MegaPose-Training-Data/MegaPose-GSO/templates`
   - `Data/MegaPose-Training-Data/MegaPose-ShapeNetCore/templates`
 - BOP test templates:
+
   - `Data/BOP-Templates/<dataset>`
-- custom inference templates:
-  - `/path/to/custom_case/templates`
 
 The training and BOP loaders expect pre-rendered RGB, mask, depth or XYZ files together with pose metadata in the layout already used by this repository.
 
@@ -343,7 +357,9 @@ Make sure:
 - your environment is activated before building extensions
 
 ## Citation
+
 If you find our work helpful, please consider citing:
+
 ```latex
 @article{2026SinRef-6D,
   author={Liu, Jian and Sun, Wei and Zeng, Kai and Zheng, Jin and Yang, Hui and Rahmani, Hossein and Mian, Ajmal and Wang, Lin},
