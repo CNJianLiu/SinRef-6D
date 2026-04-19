@@ -102,7 +102,19 @@ python setup.py install
 cd ../../../
 ```
 
-### 3. Data Preparation
+### 3. Pretrained Models
+
+**Download Pretrained Weights:**
+
+You can download the pretrained model weights from [Google Drive](https://drive.google.com/drive/folders/19pFyCBcy-9KAfB-qh--oIIaelGLdt8UX?usp=drive_link).
+
+The download includes:
+- **SinRef-6D trained weights**: Our trained pose estimation model weights
+- **VMamba backbone weights**: Pretrained VMamba backbone weights used in our pipeline
+
+After downloading, place the weights in the appropriate directories as specified in the configuration files.
+
+### 4. Data Preparation
 
 **Download Datasets:**
 
@@ -146,7 +158,7 @@ By default, the config uses relative paths:
 
 If your datasets are stored outside the repo, the code will also try to resolve the same `Data/...` structure from a shared parent directory.
 
-### 4. Template Files
+### 5. Template Files
 
 **Download BOP-Templates Dataset:**
 
@@ -164,7 +176,7 @@ Expected template roots:
 
 The training and BOP loaders expect pre-rendered RGB, mask, depth or XYZ files together with pose metadata in the layout already used by this repository.
 
-### 5. Training
+### 6. Training
 
 Use the base config:
 
@@ -187,7 +199,7 @@ Training outputs are written under:
 log/<model>_<config>_id<exp_id>/
 ```
 
-### 6. BOP Evaluation
+### 7. BOP Evaluation
 
 #### Example:
 
@@ -268,7 +280,7 @@ If your detection jsons are stored somewhere else, pass:
 --detection_dir /path/to/detection_jsons
 ```
 
-### 7. Custom Object Inference
+### 8. Custom Object Inference
 
 Prepare a custom template directory first:
 
@@ -301,7 +313,7 @@ Outputs will be written to:
 - `/path/to/custom_case/sam6d_results/detection_pem.json`
 - `/path/to/custom_case/sam6d_results/vis_pem.png`
 
-### 8. Evaluation Utilities
+### 9. Evaluation Utilities
 
 Additional scripts are included for metric computation:
 
@@ -311,7 +323,7 @@ Additional scripts are included for metric computation:
 
 These are command-line tools now. Use `--help` on each script for arguments.
 
-### 9. Reproducibility Checklist and Common Issues
+### 10. Reproducibility Checklist and Common Issues
 
 #### - For a fast first reproduction, follow this exact order:
 
